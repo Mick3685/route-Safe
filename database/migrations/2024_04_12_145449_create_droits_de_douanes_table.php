@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('taxes', function (Blueprint $table) {
+        Schema::create('droits_de_douanes', function (Blueprint $table) {
             $table->id();
-            $table->string('Type');
-            $table->integer('Montant');
-            $table->string('Information');
             $table->timestamps();
         });
     }
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('taxes');
+        Schema::dropIfExists('droits_de_douanes');
     }
 };

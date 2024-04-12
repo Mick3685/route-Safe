@@ -22,6 +22,8 @@ class User extends Authenticatable
         'contact',
         'adresse',
         'automobile',
+        'profession',
+        'type_utilisateur',
         'npi',
         'ifu',
         'password',
