@@ -21,4 +21,9 @@ class CarteGrise extends Model
      * @var array<int, string>
      */
 
+    public function automobile()
+    {
+        return $this->belongsTo(automobile::class);
+    }
+
 }

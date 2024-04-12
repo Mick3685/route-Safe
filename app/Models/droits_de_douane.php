@@ -20,4 +20,8 @@ class droits_de_douane extends Model
      *
      * @var array<int, string>
      */
+    public function automobile()
+    {
+        return $this->belongsTo(automobile::class);
+    }
 }

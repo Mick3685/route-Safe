@@ -20,4 +20,12 @@ class Paiements extends Model
      *
      * @var array<int, string>
      */
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function Facture_paiement()
+    {
+        return $this->hasOne(Facture_paiement::class);
+    }
 }

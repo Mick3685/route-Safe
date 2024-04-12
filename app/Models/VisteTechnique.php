@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VisteTechnique extends Model
+class VisiteTechnique extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -20,4 +20,8 @@ class VisteTechnique extends Model
      *
      * @var array<int, string>
      */
+    public function automobile()
+    {
+        return $this->belongsTo(automobile::class);
+    }
 }

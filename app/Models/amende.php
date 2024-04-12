@@ -18,4 +18,8 @@ class amende extends Model
      *
      * @var array<int, string>
      */
+    public function Infraction_routiere()
+    {
+        return $this->belongsTo(Infraction_routiere::class);
+    }
 }

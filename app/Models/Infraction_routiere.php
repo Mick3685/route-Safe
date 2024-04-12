@@ -23,4 +23,12 @@ class Infraction_routiere extends Model
      *
      * @var array<int, string>
      */
+    public function automobile()
+    {
+        return $this->belongsTo(automobile::class);
+    }
+    public function amende()
+    {
+        return $this->hasOne(amende::class);
+    }
 }

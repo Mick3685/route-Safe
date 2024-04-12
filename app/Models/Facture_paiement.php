@@ -19,4 +19,8 @@ class Facture_paiement extends Model
      *
      * @var array<int, string>
      */
+    public function paiements()
+    {
+        return $this->hasMany(paiements::class);
+    }
 }
