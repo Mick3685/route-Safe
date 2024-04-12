@@ -9,6 +9,7 @@ class CarteGrise extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'automobile_id',
         'num_cartegrise',
         'date_emission',
         'date_expiration',

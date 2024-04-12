@@ -9,6 +9,7 @@ class Assurance extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'automobile_id',
         'compagnie_assurance',
         'Num_police',
         'date_effet',

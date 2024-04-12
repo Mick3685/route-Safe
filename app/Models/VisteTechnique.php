@@ -9,6 +9,7 @@ class VisteTechnique extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'autombile_id',
         'agence_de_visite',
         'date_viste',
         'date_expiration',

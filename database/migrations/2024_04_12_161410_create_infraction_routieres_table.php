@@ -12,12 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('droits_de_douanes', function (Blueprint $table) {
+        Schema::create('infraction_routieres', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(automobile::class)->constrained();
-            $table->string('agence_de_paiement');
-            $table->date('date_paiement');
-            $table->date('date_expiration');
+            $table->integer('montant_amende');
+            $table->date('date_infraction');
+            $table->date('heure_infraction');
+            $table->date('lieu_infraction');
+            $table->string('description_infraction');
+            $table->string('type_infraction');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('droits_de_douanes');
+        Schema::dropIfExists('infraction_routieres');
     }
 };

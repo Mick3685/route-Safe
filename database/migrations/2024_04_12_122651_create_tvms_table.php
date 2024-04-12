@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\automobile;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +15,8 @@ class CreateTvmsTable extends Migration
     public function up()
     {
         Schema::create('tvms', function (Blueprint $table) {
-            $table->id(); 
+            $table->id();
+            $table->foreignIdFor(automobile::class)->constrained();
             $table->string('agence_de_paiement');
             $table->date('date_paiement');
             $table->date('date_expiration');

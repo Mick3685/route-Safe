@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('carte_grises', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(automobile::class)->constrained();
             $table->integer('num_carte_grise');
             $table->date('date_emission');
             $table->date('date_expiration');

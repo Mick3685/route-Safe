@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class tvm extends Model
+class Infraction_routiere extends Model
 {
     use HasFactory;
     protected $fillable = [
         'automobile_id',
-        'agence_de_paiement',
-        'date_paiement',
-        'date_expiration',
+        'description_infraction',
+        'date_infraction',
+        'heure_infraction',
+        'lieu_infraction',
+        'type_infraction',
+        'montant_amende',
     ];
 
     /**
@@ -20,5 +23,4 @@ class tvm extends Model
      *
      * @var array<int, string>
      */
-
 }

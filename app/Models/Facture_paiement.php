@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class tvm extends Model
+class Facture_paiement extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'automobile_id',
-        'agence_de_paiement',
-        'date_paiement',
-        'date_expiration',
+        'Paiement_id',
+        'date_creation_facture',
+        'montant_total',
     ];
 
     /**
@@ -20,5 +19,4 @@ class tvm extends Model
      *
      * @var array<int, string>
      */
-
 }

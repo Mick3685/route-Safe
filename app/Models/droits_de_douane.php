@@ -9,6 +9,7 @@ class droits_de_douane extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'automobile_id',
         'agence_de_paiement',
         'date_paiement',
         'date_expiration',

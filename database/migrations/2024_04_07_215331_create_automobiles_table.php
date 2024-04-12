@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,12 +16,13 @@ class CreateAutomobilesTable extends Migration
     {
         Schema::create('automobiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class)->constrained();
             $table->string('Numimma')->unique();
             $table->date('Dateimma');
             $table->string('Marque');
             $table->string('Modele');
             $table->string('Anneefab');
-            $table->string('Numseriemoteur');
+            $table->string('Num_serie_moteur');
             $table->string('Genreauto');
             $table->string('Type');
             $table->string('couleur');
