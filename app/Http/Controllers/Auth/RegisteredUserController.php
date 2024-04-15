@@ -22,29 +22,38 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
+
     public function store(Request $request): RedirectResponse
     {
+        dd($request->all());
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'contact' => ['nullable', 'integer'],
+            'adresse' => ['nullable', 'string', 'max:255'],
+            'profession' => ['nullable', 'string', 'max:255'],
+            'npi' => ['nullable', 'integer'],
+            'ifu' => ['nullable', 'integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'email' => strtolower($request->email),
+            'contact' => $request->contact,
+            'adresse' => $request->adresse,
+            'profession' => $request->profession,
+            'npi' => $request->npi,
+            'ifu' => $request->ifu,
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        event(new Registered($user,));
 
-        Auth::login($user);
+  
 
-        return redirect(route('dashboard', absolute: false));
+        
+    return redirect()->route('login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter pour accéder à votre compte.');
+
     }
 }

@@ -18,15 +18,10 @@ class CreateAutomobilesTable extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained();
             $table->string('Numimma')->unique();
-            $table->date('Dateimma');
             $table->string('Marque');
             $table->string('Modele');
             $table->string('Anneefab');
-            $table->string('Num_serie_moteur');
-            $table->string('Genreauto');
-            $table->string('Type');
             $table->string('couleur');
-            $table->string('numimmaprecedent')->nullable();
             $table->timestamps();
         });
     }

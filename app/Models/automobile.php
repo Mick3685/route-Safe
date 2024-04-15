@@ -10,17 +10,12 @@ class automobile extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'User_id',
-        'Numimma',
-        'Dateimma',
+        'user_id',
+        'Numimmat',
         'Marque',
         'Modele',
         'Anneefab',
-        'Num_serie_moteur',
-        'Genreauto',
-        'Type',
         'couleur',
-        'numimmaprecedent',
     ];
 
     /**
