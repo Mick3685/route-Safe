@@ -58,27 +58,38 @@
                     <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                         <ul class="navigation clearfix">
                             <li class="dropdown megamenu megamenu-clickable megamenu-clickable--toggler"><a
-                                    href="index-main.html">Home</a>
+                                    href="index-main.html">Statut</a>
                                
                             </li>
                             <li class="dropdown">
-                                <a href="about.html">About Us</a>
+                                <a href="about.html">Info</a>
                              
                             </li>
-                            <li class="dropdown"><a href="#">Pages</a>
+                            <li class="dropdown"><a href="#">Paiement</a>
                                
                             </li>
-                            <li class="dropdown"><a href="services.html">Services</a>
+                            <li class="dropdown"><a href="services.html">Historique</a>
                                
                             </li>
-                            <li class="dropdown"><a href="portfolio.html">Portfolio</a>
+                            <li class="dropdown"><a href="portfolio.html">Infraction</a>
                               
                             </li>
+
+							</li>
+							<li class="dropdown"><a href="portfolio.html">Amende</a>
+							
+							</li>
                            
                             <li class="dropdown">
-                                <a href="contact.html">Contact</a>
+                                <a href="contact.html">Notification</a>
                     
                             </li>
+
+						</li>
+						<li class="dropdown"><a href="portfolio.html">Facture</a>
+						  
+						</li>
+
                         </ul>
                     </div>
                 </nav>
