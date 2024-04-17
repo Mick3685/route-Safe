@@ -4,55 +4,44 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use League\Flysystem\Visibility;
 
 class automobile extends Model
 {
     use HasFactory;
+    protected $table = 'automobiles';
     protected $fillable = [
-        'user_id',
-        'Numimmat',
-        'Marque',
-        'Modele',
-        'Anneefab',
-        'couleur',
+        'id_User',
+        'num_immat',
+        'marque',
+        'date_immat',
+        'num_immat_precedent',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    public function user()
+    {
+        return $this->belongsTo(User::class,);
+    }
 
-         public function User()
-         {
-             return $this->belongsTo(User::class);
-           }
-           public function assurance()
-           {
-               return $this->hasMany(assurance::class);
-           }
-           public function CarteGrise()
-           {
-               return $this->hasOne(CarteGrise::class);
-           }
-           public function tvm()
-           {
-               return $this->hasMany(tvm::class);
-           }
-           public function VisiteTechnique()
-           {
-               return $this->hasMany(VisiteTechnique::class);
-           }
-           public function droits_de_doine()
-           {
-               return $this->hasMany(droits_de_douane::class);
-           }
-           public function infraction_routiere()
-           {
-               return $this->hasMany(Infraction_routiere::class);
-           }
-     }
-     
+    public function assurances()
+    {
+        return $this->hasMany(Assurance::class);
+    }
+
+    public function carte_grise(){
+        return $this->hasOne(carte_grise::class);
+    }
+
+    public function controle_technique(){
+        return $this->hasMany(controle_technique::class);
+    }
+    public function tvm(){
+        return $this->hasMany(t_v_m::class);
+    }
+    public function infraction(){
+        return $this->hasMany(infraction::class);
+    }
+} 
+
+
 
 

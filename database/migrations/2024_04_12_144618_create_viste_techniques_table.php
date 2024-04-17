@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\automobile;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -8,25 +7,35 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Exécute les migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('viste_techniques', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(automobile::class)->constrained();
-            $table->string('agence_de_visite');
-            $table->date('date_viste');
-            $table->date('date_expiration');
-            $table->timestamps();
+        Schema::create('controle_technique', function (Blueprint $table) {
+            $table->id('id_controle_technique'); // Utilise 'id_controle_technique' comme clé primaire
+            $table->unsignedBigInteger('id_automobile'); // Clé étrangère vers la table `automobiles`
+            $table->date('date_controle'); // Date du contrôle
+            $table->date('date_prochain_controle'); // Date du prochain contrôle
+            $table->string('lieu_controle'); // Lieu du contrôle
+            $table->timestamps(); // Ajoute les colonnes `created_at` et `updated_at`
+
+            // Ajoutez une clé étrangère pour établir une relation avec la table `automobiles`
+            $table->foreign('id_automobile')
+                  ->references('id')
+                  ->on('automobiles')
+                  ->onDelete('cascade');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Inverse les migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('viste_techniques');
+        Schema::dropIfExists('controle_technique');
     }
 };

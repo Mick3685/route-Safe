@@ -5,27 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Assurance extends Model
+class assurance extends Model
 {
     use HasFactory;
+    protected $table = 'assurances';
     protected $fillable = [
-        'automobile_id',
+        'id_automobile',
+        'nom_assurance',
+        'prix_assurance',
         'compagnie_assurance',
-        'Num_police',
-        'date_effet',
-        'type_assurance',
-        'date_debut_assurance',
-        'date_fin_assurance',
+        'num_police',
+        'date_debut',
+        'date_fin',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-
-     public function automobile()
+    public function automobile()
     {
-        return $this->belongsTo(automobile::class);
+        return $this->belongsTo(Automobile::class);
     }
+
 }
