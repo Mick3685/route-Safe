@@ -5,22 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Facture_paiement extends Model
+class facture extends Model
 {
     use HasFactory;
+    protected $table = 'facture';
     protected $fillable = [
-        'Paiement_id',
-        'date_creation_facture',
+        'id_payment',
+        'date_facture',
         'montant_total',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    public function paiements()
+    public function payment()
     {
-        return $this->hasMany(paiements::class);
+        return $this->belongsTo(payment::class);
     }
 }

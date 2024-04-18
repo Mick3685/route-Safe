@@ -5,21 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class amende extends Model
+class amend extends Model
 {
     use HasFactory;
+    protected $table = 'amend';
+    protected $primaryKey = 'id_amend';
     protected $fillable = [
-        'infraction_routiere_id',
-        'delai_paiement_amende',
-        ];
+        'id_infraction',
+        'delai_de_paiement',
+    ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    public function Infraction_routiere()
-    {
-        return $this->belongsTo(Infraction_routiere::class);
+    public function infraction(){
+        return $this->belongsTo(infraction::class);
     }
 }

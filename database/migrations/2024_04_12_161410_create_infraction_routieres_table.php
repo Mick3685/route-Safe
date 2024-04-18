@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\automobile;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -8,28 +7,38 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Exécute les migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('infraction_routieres', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(automobile::class)->constrained();
-            $table->integer('montant_amende');
-            $table->date('date_infraction');
-            $table->date('heure_infraction');
-            $table->date('lieu_infraction');
-            $table->string('description_infraction');
-            $table->string('type_infraction');
-            $table->timestamps();
+        Schema::create('infractions', function (Blueprint $table) {
+            $table->id(); // Clé primaire automatique
+            $table->unsignedBigInteger('user_automobile'); // Clé étrangère vers la table `automobiles` ou `users`
+            $table->string('type'); // Type d'infraction
+            $table->string('raison'); // Raison de l'infraction
+            $table->date('date'); // Date de l'infraction
+            $table->time('heure'); // Heure de l'infraction
+            $table->string('lieu'); // Lieu de l'infraction
+            $table->timestamps(); // Colonnes `created_at` et `updated_at`
+
+            // Ajoutez une clé étrangère pour établir une relation avec la table `automobiles` ou `users`
+            // Assurez-vous que la table `automobiles` ou `users` existe et a une colonne `id`
+            $table->foreign('user_automobile')
+                  ->references('id')
+                  ->on('automobiles') // ou 'users' si nécessaire
+                  ->onDelete('cascade');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Inverse les migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('infraction_routieres');
+        Schema::dropIfExists('infractions');
     }
 };

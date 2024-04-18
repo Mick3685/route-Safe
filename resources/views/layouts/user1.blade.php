@@ -50,61 +50,38 @@
 </head>
 
 <body>
-
-	<div class="page-wrapper">
-
-		<div class="preloader">
-			<div class="icon" style="background-image: url(images/update-01-10-2021/preloader-6.png);"></div>
-		</div>
-
-		<header class="header-six">
-			<div class="auto-container">
-				<div class="header-six__logo">
-					<a href="index-main.html">
-						<img src="images/update-01-10-2021/logo-6-dark.png" width="134"
-							alt="Linoor - DIgital Agency HTML Template | Corporate Agency | Home 06 ">
-					</a>
-
-					<div class="mobile-nav-toggler"><span class="icon flaticon-menu-2"></span><span
-							class="txt">Menu</span></div>
-				</div>
-
-			</div>
-		</header>
-
-		<nav class="mainmenu-six main-header">
-			<div class="auto-container">
-				<div class="mainmenu-six__inner nav-outer">
-					<nav class="main-menu navbar-expand-md navbar-light">
-						<div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-							<ul class="navigation clearfix">
-								<li class="dropdown megamenu megamenu-clickable megamenu-clickable--toggler"><a
-										href="index-main.html">Accueil</a>
-									
-								</li>
-								<li class="dropdown">
-									<a href="about.html">Status</a>
-								
-								</li>
-								<li class="dropdown"><a href="#">Historique</a>
-									
-								</li>
-								<li class="dropdown"><a href="services.html">Paiement</a>
-									
-								</li>
-								<li class="dropdown"><a href="portfolio.html">Facture</a>
-									
-								</li>
-								<li class="dropdown"><a href="shop.html">Notification</a>
-									
-								</li>
-								<li class="dropdown"><a href="blog-grid.html">A Propos</a>
-									
-								</li>
-						
-							</ul>
-						</div>
-					</nav>
+    
+    <nav class="mainmenu-six main-header">
+        <div class="auto-container">
+            <div class="mainmenu-six__inner nav-outer">
+                <nav class="main-menu navbar-expand-md navbar-light">
+                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                        <ul class="navigation clearfix">
+                            <li class="dropdown megamenu megamenu-clickable megamenu-clickable--toggler"><a
+                                    href="index-main.html">Home</a>
+                               
+                            </li>
+                            <li class="dropdown">
+                                <a href="about.html">About Us</a>
+                             
+                            </li>
+                            <li class="dropdown"><a href="#">Pages</a>
+                               
+                            </li>
+                            <li class="dropdown"><a href="services.html">Services</a>
+                               
+                            </li>
+                            <li class="dropdown"><a href="portfolio.html">Portfolio</a>
+                              
+                            </li>
+                           
+                            <li class="dropdown">
+                                <a href="contact.html">Contact</a>
+                    
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
 					<div class="mainmenu-six__right">
 						

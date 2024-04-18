@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Paiements;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -8,24 +7,34 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Exécute les migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('facture_paiements', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Paiements::class)->constrained();
-            $table->integer('montant_total');
-            $table->date('date_creation_paiement');
-            $table->timestamps();
+        Schema::create('facture', function (Blueprint $table) {
+            $table->id(); // Clé primaire automatique
+            $table->unsignedBigInteger('id_payment'); // Clé étrangère vers la table `payments`
+            $table->date('date_facture'); // Date de la facture
+            $table->decimal('montant_total', 10, 2); // Montant total de la facture, avec précision
+            $table->timestamps(); // Colonnes `created_at` et `updated_at`
+
+            // Ajoutez une clé étrangère pour établir une relation avec la table `payments`
+            $table->foreign('id_payment')
+                  ->references('id')
+                  ->on('payments')
+                  ->onDelete('cascade');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Inverse les migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('facture_paiements');
+        Schema::dropIfExists('facture');
     }
 };

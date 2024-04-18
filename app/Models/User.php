@@ -52,13 +52,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function automobile()
+   
+    public function automobiles()
     {
-        return $this->hasMany(automobile::class);
+        return $this->hasMany(Automobile::class);
     }
-    public function paiements()
+    public function payments()
     {
-        return $this->hasMany(paiements::class);
+        return $this->hasMany(Payment::class);
     }
 
 }

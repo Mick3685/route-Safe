@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAutomobilesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -16,13 +15,18 @@ class CreateAutomobilesTable extends Migration
     {
         Schema::create('automobiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class)->constrained();
-            $table->string('Numimma')->unique();
-            $table->string('Marque');
-            $table->string('Modele');
-            $table->string('Anneefab');
-            $table->string('couleur');
+            $table->unsignedBigInteger('id_User');
+            $table->string('num_immat');
+            $table->string('marque');
+            $table->date('date_immat');
+            $table->string('num_immat_precedent')->nullable();
             $table->timestamps();
+
+            // Assurez-vous d'ajouter les relations de clé étrangère si nécessaires.
+            $table->foreign('id_User')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade'); // Mettre à jour la relation avec la table users
         });
     }
 
