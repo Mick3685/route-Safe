@@ -2,6 +2,7 @@
 
 
 @section('content')
+
 <section class="slider-six">
     <div class="slider-six__curv">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 122">
@@ -200,3 +201,4 @@
 </section>
 
 
+@endsection('content')

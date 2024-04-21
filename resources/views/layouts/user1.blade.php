@@ -85,7 +85,7 @@
 					<div class="mainmenu-six__right">
 						@auth
 							<a href="{{ route('profile.edit') }}" class="text-truncate" style="font-size: 20px;">
-								{{ Auth::user()->user1 }}
+								{{ Auth::user()->name }}
 							</a>
 						@endauth
 					</div>
