@@ -55,44 +55,74 @@
 
         <!-- Main Header -->
         <header class="main-header header-style-one header-style-four">
-
-            <!-- Header Upper -->
-            <div class="header-upper">
-                <div class="inner-container clearfix">
-                    <!--Logo-->
-                    <div class="logo-box">
-                        <div class="logo"><a href="index.html" title="Linoor - DIgital Agency HTML Template"><img
-                                    src="images/logo-dark.png" id="dLogo" class="main-logo"
-                                    alt="Linoor - DIgital Agency HTML Template"
-                                    title="Linoor - DIgital Agency HTML Template"></a></div>
-                    </div>
-                    <div class="nav-outer clearfix">
-                        <!--Mobile Navigation Toggler-->
-                        <div class="mobile-nav-toggler"><span class="icon flaticon-menu-2"></span><span
-                                class="txt">Menu</span></div>
-
-                        <!-- Main Menu -->
-                        <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix one-page-scroll-menu">
+			<!-- Header Upper -->
+			<div class="header-upper">
+				<div class="inner-container clearfix">
+					<!-- Logo -->
+					<div class="logo-box">
+						<div class="logo">
+							<a href="index.html" title="Linoor - DIgital Agency HTML Template">
+								<img src="images/logo-dark.png" id="dLogo" class="main-logo" alt="Linoor - DIgital Agency HTML Template" title="Linoor - DIgital Agency HTML Template">
+							</a>
+						</div>
+					</div>
+					<div class="nav-outer clearfix">
+						<!-- Mobile Navigation Toggler -->
+						<div class="mobile-nav-toggler">
+							<span class="icon flaticon-menu-2"></span><span class="txt">Menu</span>
+						</div>
+		
+						<!-- Main Menu -->
+						<nav class="main-menu navbar-expand-md navbar-light">
+							<div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+								<ul class="navigation clearfix one-page-scroll-menu">
 									<li class="scrollToLink"><a href="{{Route('dashboard')}}">Accueil</a></li>
 									<li class="scrollToLink"><a href="#about">Voiture</a></li>
-									<li class="scrollToLink"><a href="#about">Paiemnet</a></li>
+									<li class="scrollToLink"><a href="#about">Paiement</a></li>
 									<li class="scrollToLink"><a href="#about">Historique</a></li>
 									<li class="scrollToLink"><a href="#about">Facture</a></li>
-                                </ul>
+								</ul>
+							</div>
+						</nav>
+					</div>
+					<div class="other-links clearfix">
+                        <!-- cart btn -->
+                        <div class="cart-btn">
+                            <a href="{{ route('profile.edit') }}" class="theme-btn cart-toggler text-black"><span
+                                    class="flaticon-shopping-cart"></span></a>
+									
+                        </div>
+                    <!--Search Btn-->
+                      
+                        <div class="link-box">
+                            <div class="call-us"> 
+								<a href="{{ route('profile.edit') }}"><span class="sub-text">{{ Auth::user()->name }}</span></a>  
+								
+                               
+                                 
+                                
                             </div>
-                        </nav>
+							<div class="call-us">
+								<span>
+									<form method="POST" action="{{ route('logout') }}">
+										@csrf
+										<button name="logout" type="submit" class="Btn">
+											
+											<div class="text">Deconnexion</div>
+										</button>
+									</form>
+								</span>
+
+							</div>
+                        </div>
                     </div>
 
-                
-
-                </div>
-            </div>
-            <!--End Header Upper-->
-
-
-        </header>
+				</div>
+		
+			</div>
+			<!-- End Header Upper -->
+		</header>
+		
         <!-- End Main Header -->
 
         <!--Mobile Menu-->
@@ -112,7 +142,7 @@
 
 
                 <nav class="mobile-nav__container">
-                    <!-- content is loading via js -->
+                    
                 </nav>
                 <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
                 
