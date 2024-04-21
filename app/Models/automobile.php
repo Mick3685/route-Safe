@@ -13,6 +13,7 @@ class automobile extends Model
         'id_User',
         'num_immat',
         'marque',
+        'modele',
         'date_immat',
         'num_immat_precedent',
     ];

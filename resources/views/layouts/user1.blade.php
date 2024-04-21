@@ -56,38 +56,40 @@
             <div class="mainmenu-six__inner nav-outer">
                 <nav class="main-menu navbar-expand-md navbar-light">
                     <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                        <ul class="navigation clearfix">
-                            <li class="dropdown megamenu megamenu-clickable megamenu-clickable--toggler"><a
-                                    href="index-main.html">Home</a>
+						<ul class="navigation clearfix">
+                            <li class="dropdown"><a
+                                    href="{{Route('dashboard')}}">Accueil</a>
                                
                             </li>
                             <li class="dropdown">
-                                <a href="about.html">About Us</a>
+								<a href="{{ route('statut') }}">Statut</a>
                              
                             </li>
-                            <li class="dropdown"><a href="#">Pages</a>
+                            <li class="dropdown"><a href="">Historique</a>
                                
                             </li>
-                            <li class="dropdown"><a href="services.html">Services</a>
+                            <li class="dropdown"><a>Paiement</a>
                                
                             </li>
-                            <li class="dropdown"><a href="portfolio.html">Portfolio</a>
+                            <li class="dropdown"><a>Facture</a>
                               
                             </li>
                            
-                            <li class="dropdown">
-                                <a href="contact.html">Contact</a>
-                    
+							<li class="dropdown"><a>Notification</a>
+                              
                             </li>
                         </ul>
                     </div>
                 </nav>
 
 					<div class="mainmenu-six__right">
-						
-						<a href="{{ route('profile.edit') }}" class="text-truncate" style="font-size: 20px;">
-							{{ Auth::user()->name }}</a>
+						@auth
+							<a href="{{ route('profile.edit') }}" class="text-truncate" style="font-size: 20px;">
+								{{ Auth::user()->user1 }}
+							</a>
+						@endauth
 					</div>
+					
 				</div>
 			</div>
 		</nav>
@@ -115,7 +117,7 @@
 				<div class="side-menu__content">
 					<p>Linoor is a premium Template for Digital Agencies, Start Ups, Small Business and a wide range of
 						other agencies.</p>
-					<p><a href="mailto:needhelp@linoor.com">needhelp@linoor.com</a> <br> <a href="tel:888-999-0000">888
+					<p><a href="mailto:needhelp@linoor.com">needhelp@Route-Safe.com</a> <br> <a href="tel:888-999-0000">888
 							999 0000</a></p>
 					<div class="side-menu__social">
 						<a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -147,19 +149,16 @@
 	@yield('content')
 
 
-
-
-
 	<section class="footer-six">
 		<div class="auto-container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-3">
 					<div class="footer-six__widget footer-six__about">
 						<a href="index.html">
-							<img src="images/update-01-10-2021/logo-6-light.png" width="135" alt="">
+							<img src="images/update-01-10-2021/logo route safe.png" width="135" alt="">
 						</a>
 						<p class="footer-six__about__text">
-							The new corporate agency theme
+							Route-safe theme
 						</p><!-- /.footer-six__about__text -->
 						<div class="footer-six__social">
 							<a href="#"><i class="fab fa-twitter"></i></a>
@@ -174,28 +173,25 @@
 						<h3 class="footer-six__title">Explore</h3><!-- /.footer-six__title -->
 						<div class="footer-six__links__list">
 							<ul class="footer-six__links__list__item">
-								<li><a href="#">About</a></li>
-								<li><a href="#">Meet Our Team</a></li>
-								<li><a href="#">Our Projects</a></li>
-								<li><a href="#">Latest News</a></li>
+								<li><a href="#">A propos</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul><!-- /.footer-six__links__list__item -->
 							<ul class="footer-six__links__list__item">
 								<li><a href="#">Support</a></li>
 								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Terms & Condition</a></li>
-								<li><a href="#">Help</a></li>
+								<li><a href="#">Conditions</a></li>
+								<li><a href="#">Aide</a></li>
 							</ul><!-- /.footer-six__links__list__item -->
 						</div><!-- /.footer-six__links__list -->
 					</div><!-- /.footer-six__widget footer-six__links -->
 				</div><!-- /.col-sm-12 col-md-12 col-lg-4 -->
 				<div class="col-sm-12 col-md-12 col-lg-5">
 					<div class="footer-six__widget footer-six__newsletter">
-						<h3 class="footer-six__title">Newsletter</h3><!-- /.footer-six__title -->
+						<h3 class="footer-six__title">Nouvelles informations</h3><!-- /.footer-six__title -->
 						<form action="#" class="footer-six__newsletter__form">
 							<input type="text" placeholder="Email address">
 							<button type="submit"><i class="fa fa-paper-plane"></i></button>
-							<p>I agree to all <a href="#">terms and policies</a> </p>
+							<p>Je suis d'accord pour tous<a href="#"> les conditions</a> </p>
 						</form><!-- /.footer-six__newsletter__form -->
 					</div><!-- /.footer-six__widget footer-six__newsletter -->
 				</div><!-- /.col-sm-12 col-md-12 col-lg-5 -->
@@ -204,7 +200,7 @@
 	</section><!-- /.footer-six -->
 	<section class="footer-six__copyright">
 		<div class="auto-container">
-			<p>© Copyright 2022 by Layerdrops.com</p>
+			<p>© Copyright 2024 by Route-Safe.com</p>
 		</div><!-- /.auto-container -->
 	</section><!-- /.footer-six__copyright -->
 

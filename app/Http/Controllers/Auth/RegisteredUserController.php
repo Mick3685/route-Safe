@@ -29,11 +29,11 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'contact' => ['nullable', 'integer'],
-            'adresse' => ['nullable', 'string', 'max:255'],
-            'profession' => ['nullable', 'string', 'max:255'],
-            'npi' => ['nullable', 'integer'],
-            'ifu' => ['nullable', 'integer'],
+            'contact' => ['integer'],
+            'adresse' => ['string'],
+            'profession' => ['string', 'max:255'],
+            'npi' => ['integer'],
+            'ifu' => ['integer'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 

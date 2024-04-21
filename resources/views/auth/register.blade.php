@@ -47,13 +47,7 @@
                         @enderror
                     </div>
 
-                    <div class="col-md-6">
-                        <label for="automobile" class="block mb-1">Automobile</label>
-                        <input id="automobile" type="text" name="automobile" class="w-full">
-                        @error('automobile')
-                            <p class="text-red-500">{{ $message }}</p>
-                        @enderror
-                    </div>
+                    
                     <div class="col-md-6">
                         <label for="profession" class="block mb-1">Profession</label>
                         <input id="profession" type="text" name="profession" class="w-full">
@@ -70,7 +64,7 @@
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-9 mx-auto">
                         <label for="ifu" class="block mb-1">IFU</label>
                         <input id="ifu" type="text" name="ifu" class="w-full">
                         <!-- Note: Assuming IFU is a text field, adjust input type if needed -->
@@ -79,14 +73,14 @@
                         @enderror
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-9 mx-auto">
                         <label for="password" class="block mb-1">Mot de passe *</label>
                         <input id="password" type="password" name="password" class="w-full">
                         @error('password')
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-9 mx-auto">
                         <label for="password_confirmation" class="block mb-1">Confirmer le mot de passe *</label>
                         <input id="password_confirmation" type="password" name="password_confirmation" class="w-full">
                     </div>

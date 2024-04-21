@@ -8,7 +8,7 @@
         <div class="icon"></div>
     </div>
 
-    <section class="welcome-section bg-light py-5" style="background-color: #7ED321;">
+    <section class="welcome-section bg-light py-5" style="background-color: #053c69;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">

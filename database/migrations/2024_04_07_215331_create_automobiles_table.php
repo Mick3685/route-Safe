@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_User');
             $table->string('num_immat');
             $table->string('marque');
+            $table->string('modele');
             $table->date('date_immat');
             $table->string('num_immat_precedent')->nullable();
             $table->timestamps();
