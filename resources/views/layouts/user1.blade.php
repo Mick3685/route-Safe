@@ -76,11 +76,11 @@
 						<nav class="main-menu navbar-expand-md navbar-light">
 							<div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
 								<ul class="navigation clearfix one-page-scroll-menu">
-									<li class="scrollToLink"><a href="{{Route('dashboard')}}">Accueil</a></li>
-									<li class="scrollToLink"><a href="#about">Voiture</a></li>
-									<li class="scrollToLink"><a href="#about">Paiement</a></li>
-									<li class="scrollToLink"><a href="#about">Historique</a></li>
-									<li class="scrollToLink"><a href="#about">Facture</a></li>
+									<li class=""><a href="{{Route('dashboard')}}">Accueil</a></li>
+									<li class=""><a href="{{Route('voiture.index')}}">Voiture</a></li>
+									<li class=""><a href="#about">Paiement</a></li>
+									<li class=""><a href="#about">Historique</a></li>
+									<li class=""><a href="#about">Facture</a></li>
 								</ul>
 							</div>
 						</nav>

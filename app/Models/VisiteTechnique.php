@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Assurance extends Model
+class VisiteTechnique extends Model
 {
     use HasFactory;
-    protected $fillable=[
+
+    protected $fillable =[
         'id_automobile',
-        'numpolice',
-        'nom',
-        'date_paiement', 
-        'date_expiration',
-        'fileass'
+        'date_visite',
+        'date_retour',
+        'agence',
+        'filevt'
     ];
 
     public function automobiles()
     {
-        return $this->belongsTo(Automobile::class);
+        return $this->belongsTo(Automobile::class, 'id_automobile');
     }
 }

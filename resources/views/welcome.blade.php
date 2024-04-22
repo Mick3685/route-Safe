@@ -1,4 +1,8 @@
 @extends('layouts._user')
+@section('title')
+Welcome
+@endsection
+
 
 @section('content')
 
@@ -8,15 +12,15 @@
         <div class="icon"></div>
     </div>
 
-    <section class="welcome-section bg-light py-5" style="background-color: #053c69;">
+    <section class="welcome-section bg-light py-5" style="background-color: #ffaa17;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h1 class="display-4 fw-bold mb-4">Bienvenue sur Route-SAFE</h1>
                     <p class="lead">La plateforme pour l'optimisation de la Conformité au Paiement des Taxes Automobiles et l'Amélioration de la Sécurité Routière</p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
-                        <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-4 me-sm-3">Inscrivez-vous</a>
-                        <a href="{{ route('login') }}" class="btn btn-outline-primary btn-lg px-4">Connexion</a>
+                        <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-4 me-sm-3" style="background-color: #ffaa17; border-color: #ffaa17;">Inscrivez-vous</a>
+                        <a href="{{ route('login') }}" class="btn btn-outline-primary btn-lg px-4" style="color: #ffaa17; border-color: #ffaa17;">Connexion</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +30,7 @@
     <section class="features-section bg-white py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold text-success mb-4">Pourquoi choisir Route-SAFE ?</h2>
+                <h2 class="display-4 fw-bold  mb-4" style="color: #ffaa17;">Pourquoi choisir Route-SAFE ?</h2>
                 <p class="lead text-secondary">Découvrez les fonctionnalités qui rendent notre plateforme unique</p>
             </div>
             <div class="row gx-5">
@@ -42,7 +46,7 @@
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100 border-0 shadow">
                         <div class="card-body text-center">
-                            <i class="fas fa-car fa-3x text-success mb-3"></i>
+                            <i class="fas fa-car fa-3x text-success mb-3" ></i>
                             <h3 class="card-title mb-3">Optimisation des Taxes</h3>
                             <p class="card-text text-muted">Gérez efficacement le paiement de vos taxes automobiles pour éviter les pénalités.</p>
                         </div>

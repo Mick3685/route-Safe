@@ -5,19 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class t_v_m extends Model
+class TaxeVM extends Model
 {
     use HasFactory;
-    protected $table = 't_v_m';
-    protected $primaryKey = 'id';
-    protected $fillable = [
-        'id_automobile',
-        'date_paiement',
-        'date_expiration',
-        'lieu_paiement',
-    ];
 
-    public function automobile()
+    protected $fillable=[
+        'id_automobile',
+        'prix',
+        'date_paiement',
+        'filetvm'       
+    ];
+    public function automobiles()
     {
         return $this->belongsTo(Automobile::class);
     }

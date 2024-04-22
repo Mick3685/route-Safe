@@ -1,4 +1,8 @@
 @extends('layouts._user')
+@section('title')
+Connexion
+@endsection
+@section('content')
 
 @section('content')
 
@@ -22,6 +26,7 @@
                 </div>
                 
                 <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div>
                         <label for="email" class="block mb-1">Adresse Email *</label>
                         <input id="email" type="email" name="email" class="w-full" required>

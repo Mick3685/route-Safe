@@ -5,44 +5,55 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class automobile extends Model
+class Automobile extends Model
 {
     use HasFactory;
-    protected $table = 'automobiles';
+
+
     protected $fillable = [
-        'id_User',
-        'num_immat',
+        'id_user',
         'marque',
         'modele',
-        'date_immat',
-        'num_immat_precedent',
+        'immatriculation',
+        'image'
+        
     ];
+
+
+    protected $table = 'automobiles';
 
     public function user()
     {
-        return $this->belongsTo(User::class,);
+        return $this->belongsTo(User::class);
+    }
+
+    public function cartesGrises()
+    {
+        return $this->hasOne(CarteGrise::class);
     }
 
     public function assurances()
     {
-        return $this->hasMany(Assurance::class);
+        return $this->hasOne(Assurance::class);
     }
 
-    public function carte_grise(){
-        return $this->hasOne(carte_grise::class);
+    public function visitesTechniques()
+    {
+        return $this->hasMany(VisiteTechnique::class);
     }
 
-    public function controle_technique(){
-        return $this->hasMany(controle_technique::class);
+    public function inflations()
+    {
+        return $this->hasMany(Inflation::class);
     }
-    public function tvm(){
-        return $this->hasMany(t_v_m::class);
+
+    public function taxevms()
+    {
+        return $this->hasOne(TaxeVM::class);
     }
-    public function infraction(){
-        return $this->hasMany(infraction::class);
-    }
-} 
 
 
 
-
+   
+    
+}
