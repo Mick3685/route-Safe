@@ -10,11 +10,19 @@ class TaxeVM extends Model
     use HasFactory;
 
     protected $fillable=[
-        'id_automobile',
+        'automobile_id',
         'prix',
-        'date_paiement',
+        'date_paiementtvm',
         'filetvm'       
     ];
+
+    public function saveImage($image)
+    {
+        // Utiliser le disk public et la méthode store
+        $this->filetvm = $image->store('taxevm', 'public');
+        $this->save();
+
+    }
     public function automobiles()
     {
         return $this->belongsTo(Automobile::class);

@@ -4,11 +4,11 @@ namespace App\Http\Controllers\RoutSafe;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Automobile;
+use App\Models\TaxeVM;
 use App\Models\Assurance;
 use App\Models\CarteGrise;
-use App\Models\Automobile; // Correction ici
-use App\Models\User;
-use App\Models\VisteTechnique; // Correction ici
+use App\Models\VisiteTechnique;
 use Illuminate\Support\Facades\Auth;
 
 class VoitureController extends Controller
@@ -19,65 +19,94 @@ class VoitureController extends Controller
         return view('RouteSafe.Voiture.index');
     }
 
-    // Méthode pour afficher la vue create
-   /* public function create()
+
+    public function create()
     {
         return view('RouteSafe.Voiture.create');
     }
 
-    public function store(Request $request)
-    {
-        // Valider les données du formulaire pour la voiture
-        $request->validate([
-            'num_immat' => 'required|string|max:255',
-            'marque' => 'required|string|max:255',
-            'modele' => 'required|string|max:255',
-            'date_immat' => 'required|date',
-            'num_immat_precedent' => 'nullable|string|max:255',
-        ]);
+   
+public function store(Request $request)
+{
 
-        // Récupérer l'utilisateur connecté
-        $user = Auth::user();
+    $user = Auth::user();
 
-        // Créer une nouvelle voiture avec les données du formulaire et l'ID de l'utilisateur connecté
-        $voiture = Automobile::create([
-            'num_immat' => $request->num_immat,
-            'marque' => $request->marque,
-            'modele' => $request->modele,
-            'date_immat' => $request->date_immat,
-            'num_immat_precedent' => $request->num_immat_precedent,
-        ]);
+    // Validation des données du formulaire
+    $request->validate([
+        'marque' => 'required|string|max:255',
+        'modele' => 'required|string|max:255',
+        'immatriculation' => 'required|string|max:255',
+        'image' => 'nullable|image',        
+        'prix' => 'required|numeric',
+        'date_paiementtvm' => 'required|date',
+        'filetvm' =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'numpolice' => 'required|string|max:255',
+        'nom' => 'required|string|max:255',
+        'date_paiementass' => 'required|date',
+        'date_expirationass' => 'required|date',
+        'fileass' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'date_visite' => 'required|date',
+        'date_retour' => 'required|date',
+        'agence' => 'required|string|max:255',
+        'filevt' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'imagecg' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-        // Créer un nouveau contrôle technique pour la voiture
-        $visteTechnique = VisteTechnique::create([ // Correction ici
-            'id_automobile' => $voiture->id,
-            'date_controle' => now(),
-            'date_prochain_controle' => now()->addDays(30),
-            'lieu_controle' => $request->lieu_controle,
-        ]);
+    // Création d'une nouvelle instance de voiture avec les données du formulaire
+    $automobile = Automobile::create([
+        'user_id' => $user->id,
+        'marque' => $request->marque,
+        'modele' => $request->modele,
+        'immatriculation' => $request->immatriculation,
+    ]);
 
-        // Créer un nouveau paiement pour la voiture (cette partie n'était pas claire, donc je l'ai supprimée)
+    // Enregistrement de l'image de la voiture
+    if ($request->hasFile('image')) {
+        $automobile->saveImage($request->file('image'));
+    }
 
-        // Créer une nouvelle carte grise pour la voiture
-        $cartegrise = CarteGrise::create([
-            'id_automobile' => $voiture->id,
-            'num_carte' => $request->num_carte,
-            'date_emission' => $request->date_emission,
-            'date_expiration' => $request->date_expiration,
-        ]);
+    // Création et enregistrement de la taxe VM
+    $taxevm = TaxeVM::create([
+        'prix' => $request->prix,
+        'date_paiementtvm' => $request->date_paiementtvm,
+        'automobile_id' => $automobile->id,
+    ]);
+    if ($request->hasFile('filetvm')) {
+        $taxevm->saveImage($request->file('filetvm'));
+    }
 
-        // Créer une nouvelle assurance pour la voiture
-        $assurance = Assurance::create([
-            'id_automobile' => $voiture->id,
-            'nom_assurance' => $request->nom_assurance,
-            'prix_assurance' => $request->prix_assurance,
-            'compagnie_assurance' => $request->compagnie_assurance,
-            'num_police' => $request->num_police,
-            'date_debut' => $request->date_debut,
-            'date_fin' => $request->date_fin,
-        ]);
+    // Création et enregistrement de l'assurance
+    $assurance = Assurance::create([
+        'numpolice' => $request->numpolice,
+        'nom' => $request->nom,
+        'date_paiementass' => $request->date_paiementass,
+        'date_expirationass' => $request->date_expirationass,
+        'automobile_id' => $automobile->id,
+    ]);
+    if ($request->hasFile('fileass')) {
+        $assurance->saveImage($request->file('fileass'));
+    }
 
-        // Rediriger l'utilisateur vers une page de confirmation ou une autre page appropriée
-        return redirect()->route('nom_de_la_route_vers_la_page_de_confirmation');
-    }**/
+    // Création et enregistrement de la visite technique
+    $visiteTechnique = VisiteTechnique::create([
+        'date_visite' => $request->date_visite,
+        'date_retour' => $request->date_retour,
+        'agence' => $request->agence,
+        'automobile_id' => $automobile->id,
+    ]);
+    if ($request->hasFile('filevt')) {
+        $visiteTechnique->saveImage($request->file('filevt'));
+    }
+
+    // Création et enregistrement de la carte grise
+    $carteGrise = CarteGrise::create([
+        'automobile_id' => $automobile->id,
+    ]);
+    if ($request->hasFile('imagecg')) {
+        $carteGrise->saveImage($request->file('imagecg'));
+    }
+
+    return redirect()->route('voiture.index')->with('success', 'Voiture ajoutée avec succès.');
 }
+    }
+

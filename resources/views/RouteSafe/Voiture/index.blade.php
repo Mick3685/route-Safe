@@ -30,7 +30,7 @@ Voiture
 <section class="auto-container mt-5">
   <div class="row">
       <div class="col-md-12 text-center">
-        <a class="theme-btn btn-style-one" href="contact.html">
+        <a class="theme-btn btn-style-one" href="{{Route('voiture.create')}}">
           <i class="btn-curve"></i>
           <span class="btn-title">Ajouter un Voiture</span>
       </a>      </div>

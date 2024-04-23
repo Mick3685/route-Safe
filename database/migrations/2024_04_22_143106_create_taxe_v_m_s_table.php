@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Automobile::class)->constrained();
             $table->integer('prix');
-            $table->date('date_paiement');
-            $table->string('filetvm');
+            $table->date('date_paiementtvm');
+            $table->string('filetvm')->nullable();
             $table->timestamps();
         });
     }

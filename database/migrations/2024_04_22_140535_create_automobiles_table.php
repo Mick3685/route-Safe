@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('marque');
             $table->string('modele');
             $table->string('immatriculation');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

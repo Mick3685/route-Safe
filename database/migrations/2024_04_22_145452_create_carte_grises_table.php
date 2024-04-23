@@ -10,12 +10,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    
     public function up(): void
     {
         Schema::create('carte_grises', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Automobile::class)->constrained();
-            $table->string('image');
+            $table->string('imagecg')->nullable();
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('date_visite');
             $table->date('date_retour');
             $table->string('agence');
-            $table->string('filevt');
+            $table->string('filevt')->nullable();
             $table->timestamps();
         });
     }

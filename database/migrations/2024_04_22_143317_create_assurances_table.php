@@ -17,9 +17,9 @@ return new class extends Migration
             $table->foreignIdFor(Automobile::class)->constrained();
             $table->integer('numpolice');
             $table->string('nom');
-            $table->date('date_paiement');
-            $table->date('date_expiration');
-            $table->string('fileass');
+            $table->date('date_paiementass');
+            $table->date('date_expirationass');
+            $table->string('fileass')->nullable();
             $table->timestamps();
         });
     }

@@ -11,13 +11,21 @@ class Automobile extends Model
 
 
     protected $fillable = [
-        'id_user',
+        'user_id',
         'marque',
         'modele',
         'immatriculation',
         'image'
         
     ];
+
+    public function saveImage($image)
+    {
+        // Utiliser le disk public et la méthode store
+        $this->image = $image->store('automobile', 'public');
+        $this->save();
+
+    }
 
 
     protected $table = 'automobiles';

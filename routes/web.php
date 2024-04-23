@@ -23,5 +23,9 @@ Route::middleware('auth')->group(function () {
 
     // Route pour afficher la vue index de la voiture
     Route::get('/voiture', [VoitureController::class, 'index'])->name('voiture.index');
+    Route::get('/create_voiture', [VoitureController::class, 'create'])->name('voiture.create');
+    Route::post('/voitures', [VoitureController::class, 'store'])->name('voiture.store');
+
+
 });
 require __DIR__ . '/auth.php';
