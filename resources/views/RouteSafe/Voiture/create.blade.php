@@ -24,14 +24,14 @@ Ajouter Voiture
     </div>
 </section>
 
-<section class="auto-container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <form action="{{ route('voiture.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-
+<section class="auto-container mt-5"> 
+    <form action="{{ route('voiture.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Information de la voiture</h3>
                         <!-- Marque -->
                         <div class="mb-3">
                             <label for="marque" class="form-label">Marque</label>
@@ -54,8 +54,15 @@ Ajouter Voiture
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <input type="file" class="form-control" id="image" name="image" required>
-                        </div>
+                        </div>          
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Information de la TMV</h3>
                         <!-- Prix Taxe -->
                         <div class="mb-3">
                             <label for="prix" class="form-label">Prix Taxe</label>
@@ -73,7 +80,16 @@ Ajouter Voiture
                             <label for="filetvm" class="form-label">Fichier TVM</label>
                             <input type="file" class="form-control" id="filetvm" name="filetvm" required>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
 
+        <div class="row mt-5">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Information de l'Assurance</h3>
                         <!-- Numéro Police Assurance -->
                         <div class="mb-3">
                             <label for="numpolice" class="form-label">Numéro Police Assurance</label>
@@ -102,8 +118,15 @@ Ajouter Voiture
                         <div class="mb-3">
                             <label for="fileass" class="form-label">Fichier Assurance</label>
                             <input type="file" class="form-control" id="fileass" name="fileass" required>
-                        </div>
+                        </div>      
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Information de la Visite Technique</h3>
                         <!-- Date Visite -->
                         <div class="mb-3">
                             <label for="date_visite" class="form-label">Date Visite Technique</label>
@@ -127,21 +150,32 @@ Ajouter Voiture
                             <label for="filevt" class="form-label">Fichier Visite Technique</label>
                             <input type="file" class="form-control" id="filevt" name="filevt" required>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
 
+        <div class="row mt-5 text-center">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Information de la Carte Grise</h3>
                         <!-- Image Carte Grise -->
                         <div class="mb-3">
                             <label for="imagecg" class="form-label">Image Carte Grise</label>
                             <input type="file" class="form-control" id="imagecg" name="imagecg" required>
-                        </div>
-
-                        <!-- Bouton de soumission -->
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Ajouter Voiture</button>
-                        </div>
-                    </form>
+                        </div> 
+                    </div>
                 </div>
             </div>
+        </div>  
+
+        <div class="text-center mt-3">
+            <button type="submit" class="theme-btn btn-style-one">
+                <i class="btn-curve"></i>
+                <span class="btn-title">Ajouter</span>
+            </button>
         </div>
-    </div>
+    </form>   
 </section>
 @endsection

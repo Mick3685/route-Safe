@@ -16,7 +16,8 @@ class VoitureController extends Controller
     // Méthode pour afficher la vue index
     public function index()
     {
-        return view('RouteSafe.Voiture.index');
+        $automobiles = Automobile::all();
+        return view('RouteSafe.Voiture.index', compact('automobiles')); 
     }
 
 
