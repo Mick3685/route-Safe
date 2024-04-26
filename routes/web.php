@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoutSafe\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutSafe\VoitureController;
 
@@ -21,10 +22,14 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
 
 
-    // Route pour afficher la vue index de la voiture
+    // Route pour voiture
     Route::get('/voiture', [VoitureController::class, 'index'])->name('voiture.index');
     Route::get('/create_voiture', [VoitureController::class, 'create'])->name('voiture.create');
     Route::post('/voitures', [VoitureController::class, 'store'])->name('voiture.store');
+
+    //Route pour Contact
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::post('/create_contact', [ContactController::class, 'store'])->name('contact.store');
 
 
 });
