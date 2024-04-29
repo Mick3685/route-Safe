@@ -81,6 +81,7 @@
 									<li class=""><a href="#about">Paiement</a></li>
 									<li class=""><a href="#about">Historique</a></li>
 									<li class=""><a href="#about">Facture</a></li>
+									<li class=""><a href="#about">Contact</a></li>
 								</ul>
 							</div>
 						</nav>
