@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,9 +48,7 @@
 
         <!-- style switcher -->
        
-        <div class="preloader">
-            <div class="icon"></div>
-        </div>
+       
 
         <!-- Main Header -->
         <header class="main-header header-style-one header-style-four">
@@ -81,7 +78,7 @@
 									<li class=""><a href="#about">Paiement</a></li>
 									<li class=""><a href="#about">Historique</a></li>
 									<li class=""><a href="#about">Facture</a></li>
-									<li class=""><a href="#about">Contact</a></li>
+									<li class=""><a href="{{Route('contact.index')}}">Contact</a></li>
 								</ul>
 							</div>
 						</nav>
