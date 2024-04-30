@@ -24,52 +24,45 @@
     <link href="css/custom-animate.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jarallax.css">
     <link href="css/style.css" rel="stylesheet">
-    <!-- rtl css -->
+    
     <link href="css/rtl.css" rel="stylesheet">
-    <!-- Responsive File -->
+    
     <link href="css/responsive.css" rel="stylesheet">
 
-    <!-- Color css -->
+    
     <link rel="stylesheet" id="jssDefault" href="css/colors/color-default.css">
 
     <link rel="shortcut icon" href="images/favicon.png" id="fav-shortcut" type="image/x-icon">
     <link rel="icon" href="images/favicon.png" id="fav-icon" type="image/x-icon">
 
-    <!-- Responsive Settings -->
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
 </head>
 
 <body>
 
     <div class="page-wrapper">
-
-        <!-- style switcher -->
        
-       
-
-        <!-- Main Header -->
         <header class="main-header header-style-one header-style-four">
-			<!-- Header Upper -->
+
 			<div class="header-upper">
 				<div class="inner-container clearfix">
-					<!-- Logo -->
+
 					<div class="logo-box">
 						<div class="logo">
-							<a href="index.html" title="Linoor - DIgital Agency HTML Template">
-								<img src="images/logo-dark.png" id="dLogo" class="main-logo" alt="Linoor - DIgital Agency HTML Template" title="Linoor - DIgital Agency HTML Template">
+							<a href="index.html" title="Route Safe">
+								<img src="images/logo-dark.png" id="dLogo" class="main-logo" alt="Route-Safe" title="Route-Safe">
 							</a>
 						</div>
 					</div>
 					<div class="nav-outer clearfix">
-						<!-- Mobile Navigation Toggler -->
+
 						<div class="mobile-nav-toggler">
 							<span class="icon flaticon-menu-2"></span><span class="txt">Menu</span>
 						</div>
 		
-						<!-- Main Menu -->
 						<nav class="main-menu navbar-expand-md navbar-light">
 							<div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
 								<ul class="navigation clearfix one-page-scroll-menu">
@@ -84,14 +77,13 @@
 						</nav>
 					</div>
 					<div class="other-links clearfix">
-                        <!-- cart btn -->
+
                         <div class="cart-btn">
                             <a href="{{ route('profile.edit') }}" class="theme-btn cart-toggler text-black"><span
                                     class="flaticon-shopping-cart"></span></a>
 									
                         </div>
-                    <!--Search Btn-->
-                      
+
                         <div class="link-box">
                             <div class="call-us"> 
 								<a href="{{ route('profile.edit') }}"><span class="sub-text">{{ Auth::user()->name }}</span></a>  
@@ -118,48 +110,47 @@
 				</div>
 		
 			</div>
-			<!-- End Header Upper -->
 		</header>
 		
-        <!-- End Main Header -->
 
-        <!--Mobile Menu-->
+
+        
         <div class="side-menu__block">
 
 
             <div class="side-menu__block-overlay custom-cursor__overlay">
                 <div class="cursor"></div>
                 <div class="cursor-follower"></div>
-            </div><!-- /.side-menu__block-overlay -->
+            </div>
             <div class="side-menu__block-inner ">
                 <div class="side-menu__top justify-content-end">
 
                     <a href="#" class="side-menu__toggler side-menu__close-btn"><img src="images/icons/close-1-1.png"
                             alt=""></a>
-                </div><!-- /.side-menu__top -->
+                </div>
 
 
                 <nav class="mobile-nav__container">
                     
                 </nav>
-                <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+                <div class="side-menu__sep"></div>
                 
-            </div><!-- /.side-menu__block-inner -->
-        </div><!-- /.side-menu__block -->
+            </div>
+        </div>
 
-        <!--Search Popup-->
+        
         <div class="search-popup">
             <div class="search-popup__overlay custom-cursor__overlay">
                 <div class="cursor"></div>
                 <div class="cursor-follower"></div>
-            </div><!-- /.search-popup__overlay -->
+            </div>
             <div class="search-popup__inner">
                 <form action="#" class="search-popup__form">
                     <input type="text" name="search" placeholder="Type here to Search....">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
-            </div><!-- /.search-popup__inner -->
-        </div><!-- /.search-popup -->
+            </div>
+        </div>
 	</div>	
 
 	@yield('content')
@@ -178,8 +169,8 @@
 							<div class="logo">
 								<a href="index.html"><img id="fLogo" src="images/footer-logo.png" alt="" /></a>
 							</div>
-							<div class="text">Welcome to our web design agency. Lorem ipsum simply free text
-								dolor sited amet cons cing elit.</div>
+							<div class="text">Bienvenue sur la platforme nationale. Conformez vous au paiement de vos taxes automobiles.
+							</div>
 							<ul class="social-links clearfix">
 								<li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
 								<li><a href="#"><span class="fab fa-twitter"></span></a></li>
@@ -194,23 +185,21 @@
 				<div class="column col-xl-3 col-lg-6 col-md-6 col-sm-12">
 					<div class="footer-widget links-widget">
 						<div class="widget-content">
-							<h6>Explore</h6>
+							<h6>Explorer</h6>
 							<div class="row clearfix">
 								<div class="col-md-6 col-sm-12">
 									<ul>
-										<li><a href="#">About</a></li>
-										<li><a href="#">Meet Our Team</a></li>
-										<li><a href="#">Our Portfolio</a></li>
-										<li><a href="#">Latest News</a></li>
+										<li><a href="#">A propos</a></li>
+										<li><a href="#">Actualités</a></li>
 										<li><a href="#">Contact</a></li>
 									</ul>
 								</div>
 								<div class="col-md-6 col-sm-12">
 									<ul>
 										<li><a href="#">Support</a></li>
-										<li><a href="#">Privacy Policy</a></li>
-										<li><a href="#">Terms of Use</a></li>
-										<li><a href="#">Help</a></li>
+										<li><a href="#">Politique de confidentialité</a></li>
+										<li><a href="#">Conditions d'utilisation</a></li>
+										<li><a href="#">Aide</a></li>
 									</ul>
 								</div>
 							</div>
@@ -224,12 +213,11 @@
 						<div class="widget-content">
 							<h6>Contact</h6>
 							<ul class="contact-info">
-								<li class="address"><span class="icon flaticon-pin-1"></span> 66 Broklyn Street,
-									New York <br>United States of America</li>
-								<li><span class="icon flaticon-call"></span><a href="tel:666888000">666 888
-										000</a></li>
+								<li class="address"><span class="icon flaticon-pin-1"></span> Ministère du numérique,
+									Rue 440, Cotonou<br>République du Bénin</li>
+								<li><span class="icon flaticon-call"></span><a href="tel:00229 21 30 02 36">00229 21 30 02 36</a></li>
 								<li><span class="icon flaticon-email-2"></span><a
-										href="mailto:needhelp@linoor.com">needhelp@linoor.com</a></li>
+										href="mailto:needhelp@linoor.com">numerique@gouv.bj</a></li>
 							</ul>
 						</div>
 					</div>
@@ -239,19 +227,18 @@
 				<div class="column col-xl-3 col-lg-6 col-md-6 col-sm-12">
 					<div class="footer-widget newsletter-widget">
 						<div class="widget-content">
-							<h6>Newsletter</h6>
+							<h6>Bulletin d'informations</h6>
 							<div class="newsletter-form">
 								<form method="post" action="https://pixydrops.com/linoorhtml/contact.html">
 									<div class="form-group clearfix">
-										<input type="email" name="email" value="" placeholder="Email Address"
+										<input type="email" name="email" value="" placeholder="Addresse Email"
 											required="">
 										<button type="submit" class="theme-btn"><span
 												class="fa fa-envelope"></span></button>
 									</div>
 								</form>
 							</div>
-							<div class="text">Sign up for our latest news & articles. We won’t give you spam
-								mails.</div>
+							<div class="text">Inscrivez-vous pour nos dernières actualités et articles. Nous ne vous enverrons pas de courriers indésirables.</div>
 						</div>
 					</div>
 				</div>
@@ -265,7 +252,7 @@
 	<div class="footer-bottom">
 		<div class="auto-container">
 			<div class="inner clearfix">
-				<div class="copyright">&copy; Copyright 2022 by Layerdrops.com</div>
+				<div class="copyright">&copy; Copyright 2024 by Route-Safe Bénin.com</div>
 			</div>
 		</div>
 	</div>
@@ -273,7 +260,7 @@
 </footer>
 
 </div>
-<!--End pagewrapper-->
+
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 

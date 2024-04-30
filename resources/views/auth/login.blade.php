@@ -16,7 +16,7 @@ Connexion
     </div>
 
     <section class="login-wrapper">
-        <div class="login-bg" style="background-image: url(images/update-1-12-2020/background/login-bg.jpg);"></div>
+        <div class="login-bg" style="background-image: url(images/update-01-10-2021/Slider/how.jpg);"></div>
         <!-- /.login-bg -->
         <div class="login-content">
             <div class="login-content__inner">
