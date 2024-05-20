@@ -27,19 +27,18 @@ Contact
         </div>
     </div>
 </section>
-<!--End Banner Section -->
 
-<!--Contact Section-->
+
 <section class="contact-section">
     <div class="auto-container">
-        <div class="sec-title centered">
-            <h2>Nous somme toujours disponible pour vous<span class="dot">.</span></h2>
+        <div>
+            <h2>Nous somme toujours disponible pour vous servir<span class="dot">.</span></h2>
         </div>
 
     </div>
     
         <div class="form-box">
-            <div class="sec-title">
+            <div>
                 <h2>Laissez votre message<span class="dot">.</span></h2>
             </div>
             <div class="default-form">

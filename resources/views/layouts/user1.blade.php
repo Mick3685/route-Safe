@@ -32,8 +32,8 @@
     
     <link rel="stylesheet" id="jssDefault" href="css/colors/color-default.css">
 
-    <link rel="shortcut icon" href="images/favicon.png" id="fav-shortcut" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" id="fav-icon" type="image/x-icon">
+    <link rel="shortcut icon" href="images/2.jpg" id="fav-shortcut" type="image/x-icon">
+    <link rel="icon" href="images/2.jpg" id="fav-icon" type="image/x-icon">
 
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +53,7 @@
 					<div class="logo-box">
 						<div class="logo">
 							<a href="index.html" title="Route Safe">
-								<img src="images/logo-dark.png" id="dLogo" class="main-logo" alt="Route-Safe" title="Route-Safe">
+								<img src="images/2.jpg" id="dLogo" class="main-logo" alt="Route-Safe" title="Route-Safe">
 							</a>
 						</div>
 					</div>
@@ -67,10 +67,11 @@
 							<div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
 								<ul class="navigation clearfix one-page-scroll-menu">
 									<li class=""><a href="{{Route('dashboard')}}">Accueil</a></li>
+									<li class=""><a href="{{Route('statut')  }}">Statut</a></li>
 									<li class=""><a href="{{Route('voiture.index')}}">Voiture</a></li>
-									<li class=""><a href="#about">Paiement</a></li>
-									<li class=""><a href="#about">Historique</a></li>
-									<li class=""><a href="#about">Facture</a></li>
+									<li class=""><a href="">Paiement</a></li>
+									<li class=""><a href="">Historique</a></li>
+									<li class=""><a href="">Facture</a></li>
 									<li class=""><a href="{{Route('contact.index')}}">Contact</a></li>
 								</ul>
 							</div>
@@ -167,7 +168,7 @@
 					<div class="footer-widget logo-widget">
 						<div class="widget-content">
 							<div class="logo">
-								<a href="index.html"><img id="fLogo" src="images/footer-logo.png" alt="" /></a>
+								<a href="index.html"><img id="fLogo" src="images/1.png" alt="" /></a>
 							</div>
 							<div class="text">Bienvenue sur la platforme nationale. Conformez vous au paiement de vos taxes automobiles.
 							</div>
@@ -189,9 +190,9 @@
 							<div class="row clearfix">
 								<div class="col-md-6 col-sm-12">
 									<ul>
-										<li><a href="#">A propos</a></li>
-										<li><a href="#">Actualités</a></li>
-										<li><a href="#">Contact</a></li>
+										<li><a href="{{ route('about') }}">A Propos</a>
+										<li><a href="">Actualités</a></li>
+										<li><a href="">Contact</a></li>
 									</ul>
 								</div>
 								<div class="col-md-6 col-sm-12">
@@ -252,7 +253,7 @@
 	<div class="footer-bottom">
 		<div class="auto-container">
 			<div class="inner clearfix">
-				<div class="copyright">&copy; Copyright 2024 by Route-Safe Bénin.com</div>
+				<div class="copyright">&copy; Copyright 2024 by Mickael Renaud</div>
 			</div>
 		</div>
 	</div>

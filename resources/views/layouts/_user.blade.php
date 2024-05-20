@@ -31,8 +31,8 @@
     <!-- Color css -->
     <link rel="stylesheet" id="jssDefault" href="css/colors/color-default.css">
 
-    <link rel="shortcut icon" href="images/favicon.png" id="fav-shortcut" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" id="fav-icon" type="image/x-icon">
+    <link rel="shortcut icon" href="images/2.jpg" id="fav-shortcut" type="image/x-icon">
+    <link rel="icon" href="images/2.jpg" id="fav-icon" type="image/x-icon">
 
     <!-- Responsive Settings -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

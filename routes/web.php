@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\aboutController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoutSafe\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +23,10 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware('auth')->group(function () {
 
+   // Route pour admin
+   Route::get('/admin/dashboard', [adminController::class, 'index'])->name('admin.dashboard');
 
+   
     // Route pour voiture
     Route::get('/voiture', [VoitureController::class, 'index'])->name('voiture.index');
     Route::get('/create_voiture', [VoitureController::class, 'create'])->name('voiture.create');
@@ -30,7 +35,19 @@ Route::middleware('auth')->group(function () {
     //Route pour Contact
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
     Route::post('/create_contact', [ContactController::class, 'store'])->name('contact.store');
+    
+    //Route pour contrôle de conformité
+    Route::get('/statut', function () {
+        return view('statut');
+    })->name('statut'); // Assurez-vous que la route est nommée 'statut'
+    
+    //Route pour la page à propos
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
 
 
-});
+    
+    });
+    
 require __DIR__ . '/auth.php';

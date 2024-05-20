@@ -1,22 +1,22 @@
 @extends('layouts.user1')
 
 @section('title')
-Ajouter Voiture
+Ajouter Automobile
 @endsection
 
 @section('content')
 <section class="page-banner">
-    <div class="image-layer" style="background-image:url(images/background/image-7.jpg);"></div>
+    <div class="image-layer" style="background-image:url(images/background/slide-source.jpg);"></div>
     <div class="shape-1"></div>
     <div class="shape-2"></div>
     <div class="banner-inner">
         <div class="auto-container">
             <div class="inner-container clearfix">
-                <h1>Ajouter Voiture</h1>
+                <h1>Ajout d'automobile</h1>
                 <div class="page-nav">
                     <ul class="bread-crumb clearfix">
                         <li><a href="index-main.html">Accueil</a></li>
-                        <li class="active">Ajouter Voiture</li>
+                        <li class="active">Ajout d'automobile</li>
                     </ul>
                 </div>
             </div>
