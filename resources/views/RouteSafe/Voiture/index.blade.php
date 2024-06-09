@@ -36,7 +36,6 @@ Voiture
         </div>
     </div>
 
-    <!-- Section pour afficher les informations des voitures enregistrées -->
     <div class="row mt-5">
         @foreach($automobiles as $voiture)
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">

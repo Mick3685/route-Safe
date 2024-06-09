@@ -1,40 +1,79 @@
-@extends('layouts.app')
+@extends('layouts._user')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
-            <h1>Détails de la voiture</h1>
-            <div class="card mb-3">
-                <div class="card-header">
+            <h1 class="mb-4">Détails de la voiture</h1>
+            <div class="card mb-3 shadow-sm">
+                <div class="card-header bg-primary text-white">
                     <h2>{{ $automobile->marque }} {{ $automobile->modele }}</h2>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             @if($automobile->image)
-                                <img src="{{ asset('storage/' . $automobile->image) }}" alt="Image de la voiture" class="img-fluid">
+                                <img src="{{ asset('storage/' . $automobile->image) }}" alt="Image de la voiture" class="img-fluid rounded">
                             @else
-                                <p>Pas d'image disponible pour cette voiture</p>
+                                <p class="text-muted">Pas d'image disponible pour cette voiture</p>
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <p><strong>Immatriculation:</strong> {{ $automobile->immatriculation }}</p>
-                            <p><strong>Date de paiement de la taxe VM:</strong> {{ $automobile->taxeVM->date_paiementtvm }}</p>
-                            <p><strong>Numéro de police d'assurance:</strong> {{ $automobile->assurance->numpolice }}</p>
-                            <p><strong>Nom de l'assurance:</strong> {{ $automobile->assurance->nom }}</p>
-                            <p><strong>Date de paiement de l'assurance:</strong> {{ $automobile->assurance->date_paiementass }}</p>
-                            <p><strong>Date d'expiration de l'assurance:</strong> {{ $automobile->assurance->date_expirationass }}</p>
-                            <p><strong>Date de visite technique:</strong> {{ $automobile->visiteTechnique->date_visite }}</p>
-                            <p><strong>Date de retour de visite technique:</strong> {{ $automobile->visiteTechnique->date_retour }}</p>
-                            <p><strong>Agence de visite technique:</strong> {{ $automobile->visiteTechnique->agence }}</p>
+                            <p><strong>Immatriculation:</strong> <span class="badge bg-info text-dark">{{ $automobile->immatriculation }}</span></p>
+
+                            @if($automobile->taxevms->isNotEmpty())
+                                <div class="mb-3">
+                                    <h5>Taxes VM</h5>
+                                    <ul class="list-group">
+                                        @foreach($automobile->taxevms as $tax)
+                                            <li class="list-group-item">
+                                                <strong>Date de paiement:</strong> {{ $tax->date_paiementtvm }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @else
+                                <p><strong>Date de paiement de la taxe VM:</strong> <span class="badge bg-secondary">Non disponible</span></p>
+                            @endif
+
+                            @if($automobile->assurances->isNotEmpty())
+                                <div class="mb-3">
+                                    <h5>Assurances</h5>
+                                    <ul class="list-group">
+                                        @foreach($automobile->assurances as $assurance)
+                                            <li class="list-group-item">
+                                                <strong>Numéro de police:</strong> {{ $assurance->numpolice }}<br>
+                                                <strong>Nom de l'assurance:</strong> {{ $assurance->nom }}<br>
+                                                <strong>Date de paiement:</strong> {{ $assurance->date_paiementass }}<br>
+                                                <strong>Date d'expiration:</strong> {{ $assurance->date_expirationass }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @else
+                                <p><strong>Informations sur l'assurance:</strong> <span class="badge bg-secondary">Non disponible</span></p>
+                            @endif
+
+                            @if($automobile->visitesTechniques->isNotEmpty())
+                                <div class="mb-3">
+                                    <h5>Visites Techniques</h5>
+                                    <ul class="list-group">
+                                        @foreach($automobile->visitesTechniques as $visiteTechnique)
+                                            <li class="list-group-item">
+                                                <strong>Date de visite:</strong> {{ $visiteTechnique->date_visite }}<br>
+                                                <strong>Date de retour:</strong> {{ $visiteTechnique->date_retour }}<br>
+                                                <strong>Agence:</strong> {{ $visiteTechnique->agence }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @else
+                                <p><strong>Informations sur la visite technique:</strong> <span class="badge bg-secondary">Non disponible</span></p>
+                            @endif
                         </div>
                     </div>
-                    <div class="row mt-4">
-                       
-                    </div>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer text-end">
                     <a href="{{ route('voiture.index') }}" class="btn btn-primary">Retour à la liste des voitures</a>
                 </div>
             </div>

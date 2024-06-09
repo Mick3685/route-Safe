@@ -42,7 +42,7 @@ class Automobile extends Model
 
     public function assurances()
     {
-        return $this->hasOne(Assurance::class);
+        return $this->hasMany(Assurance::class);
     }
 
     public function visitesTechniques()
@@ -57,7 +57,7 @@ class Automobile extends Model
 
     public function taxevms()
     {
-        return $this->hasOne(TaxeVM::class);
+        return $this->hasMany(TaxeVM::class);
     }
 
 
