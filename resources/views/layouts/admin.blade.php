@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo benin.jpg" />
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Turbo - Bootstrap Material Admin Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROUTE-SAFE Admin Dashboard Template</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -27,7 +28,7 @@
         <div class="sidebar">
             <div class="logo">
                 <a href="#" class="simple-text">
-                    Turbo Admin
+                    ROUTE-SAFE Admin
                 </a>
             </div>
             <div class="logo logo-mini">
@@ -38,20 +39,22 @@
          
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li> <a href=""><h3>Accueil</h3></a>  </li>
-                    <li> <a href=""><h3>Contrôle</h3></a>  </li>
-                    <li> <a href=""><h3>Automobiles</h3></a>  </li>
-                    <li> <a href=""><h3>Infractions</h3></a>  </li>
-                    <li> <a href=""><h3>Amendes</h3></a>  </li>
-                    <li> <a href=""><h3>Gestion des citoyens</h3></a>  </li>
-                    <li> <a href=""><h3>Rapports</h3></a>  </li>
-                    <li> <a href=""><h3>Assistance</h3></a>  </li>
+                    <li> <a href=""><h4>Accueil</h4></a>  </li>
+                    <li> <a href="{{ route('controleConform') }}"><h4>Contrôle</h4></a>  </li>
+                    <li> <a href=""><h4>Automobiles</h4></a>  </li>
+                    <li> <a href=""><h4>Infractions</h4></a>  </li>
+                    <li> <a href=""><h4>Amendes</h4></a>  </li>
+                    <li> <a href=""><h4>Gestion des citoyens</h3></a>  </li>
+                    <li> <a href=""><h4>Rapports</h4></a>  </li>
+                    <li> <a href=""><h4>Assistance</h4></a>  </li>
 
                 </ul>
             </div>
         </div>
         <div class="main-panel">
-            <nav class="navbar navbar-default navbar-absolute" data-topbar-color="blue">
+            <nav class="navbar navbar-default navbar-absolute" data-topbar-color="#EF9B0F">
+                <div class="image-layer" style="background-image:url('../assets/img/logo benin.jpg'); filter: brightness(0.7);"></div>
+
                 <div class="container-fluid">
                     <div class="navbar-minimize">
                         <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
@@ -81,7 +84,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="#">Turbo</a> BootStrap Admin Dashboard
+                        <a href="#">ROUTE SAFE</a> Admin Dashboard
                     </p>
                 </div>
             </footer>

@@ -13,15 +13,15 @@ Welcome
     </div>
 
     <section class="welcome-section bg-light py-5" style="background-color: #ffaa17;">
-        <div class="container">
+       <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h1 class="display-4 fw-bold mb-4">Bienvenue sur Route-SAFE</h1>
-                    <div class="col-md-12 col-lg-6 wow fadeInLeft animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInLeft;" style="display: inline-flex">
+                    <center><div class="col-md-12 col-lg-6 wow fadeInLeft animated" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInLeft;" style="display: inline-flex">
                         <div class="about-seven__images">
                             <img src="images/update-01-10-2021/services/kdhk.jpg" alt="">
                         </div>
-                    </div>
+                    </div></center>
                     <h2 class="lead">La plateforme pour l'optimisation de la Conformité au Paiement des Taxes Automobiles et l'Amélioration de la Sécurité Routière</h2>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
                         <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-4 me-sm-3" style="background-color: #ffaa17; border-color: #ffaa17;">Inscrivez-vous</a>

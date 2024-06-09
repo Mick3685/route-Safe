@@ -6,7 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoutSafe\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutSafe\VoitureController;
-
+use App\Http\Controllers\ControleConformController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,11 +27,23 @@ Route::middleware('auth')->group(function () {
    // Route pour admin
    Route::get('/admin/dashboard', [adminController::class, 'index'])->name('admin.dashboard');
 
-   
+    // Route pour controle de conformité de l'admin
+    Route::get('/controleConform', [ControleConformController::class, 'index'])->name('controleConform');
+    
+
+// Route pour le paiement 
+
+Route::get('payment', [PaymentController::class, 'payement'])->name('payment');
+
+
     // Route pour voiture
     Route::get('/voiture', [VoitureController::class, 'index'])->name('voiture.index');
     Route::get('/create_voiture', [VoitureController::class, 'create'])->name('voiture.create');
     Route::post('/voitures', [VoitureController::class, 'store'])->name('voiture.store');
+    Route::get('/voiture_id',[VoitureController::class, 'detail'])->name('voiture.detail');
+    Route::get('/voiture/{id}', [VoitureController::class, 'show'])->name('detail');
+
+
 
     //Route pour Contact
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
@@ -46,6 +59,7 @@ Route::middleware('auth')->group(function () {
         return view('about');
     })->name('about');
 
+ 
 
     
     });

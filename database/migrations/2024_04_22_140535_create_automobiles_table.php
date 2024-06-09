@@ -14,10 +14,10 @@ return new class extends Migration
     {
         Schema::create('automobiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class)->constrained();
+            $table->foreignIdFor(User::class)->constrained('User');
             $table->string('marque');
             $table->string('modele');
-            $table->string('immatriculation');
+            $table->string('immatriculation')->unique();
             $table->string('image')->nullable();
             $table->timestamps();
         });

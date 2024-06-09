@@ -35,11 +35,23 @@ Statut
             <h4>Entrez le n° d'immatriculation</h4>
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Example: XX 0000 RB">
-                <button class="btn btn-primary">Contrôler</button>
+                <button class="btn btn-primary"><a href="{{Route('dashboard')}}">Contrôler</a></button>
+                
             </div>
         </div>
     </div>
     <br>
+
+    @if(isset($details))
+    <p>Nom du propriétaire: {{ $details['nom_proprietaire'] }}</p>
+    <p>Adresse: {{ $details['adresse_proprietaire'] }}</p>
+    <p>Numéro de téléphone: {{ $details['numero_telephone_proprietaire'] }}</p>
+    <p>Date de paiement des taxes: {{ $details['date_paiement_taxes'] }}</p>
+    <p>Date d'assurance: {{ $details['date_assurance'] }}</p>
+@elseif(isset($message))
+    <p>{{ $message }}</p>
+@endif
+
 </section>
 
 

@@ -25,6 +25,13 @@ class VoitureController extends Controller
     {
         return view('RouteSafe.Voiture.create');
     }
+     
+    public function show($id)
+    {
+        $automobile = Automobile::findOrFail($id);
+        return view('RouteSafe.Voiture.detail', compact('automobile'));
+    }
+    
 
    
 public function store(Request $request)
@@ -109,5 +116,6 @@ public function store(Request $request)
 
     return redirect()->route('voiture.index')->with('success', 'Voiture ajoutée avec succès.');
 }
-    }
 
+
+    }

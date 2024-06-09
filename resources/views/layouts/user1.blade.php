@@ -69,7 +69,7 @@
 									<li class=""><a href="{{Route('dashboard')}}">Accueil</a></li>
 									<li class=""><a href="{{Route('statut')  }}">Statut</a></li>
 									<li class=""><a href="{{Route('voiture.index')}}">Voiture</a></li>
-									<li class=""><a href="">Paiement</a></li>
+									<li class=""><a href="{{Route('payment') }}">Paiement</a></li>
 									<li class=""><a href="">Historique</a></li>
 									<li class=""><a href="">Facture</a></li>
 									<li class=""><a href="{{Route('contact.index')}}">Contact</a></li>
@@ -286,6 +286,7 @@
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/custom-script.js"></script>
 
+<script src="https://cdn.kkiapay.me/k.js">
 
 <script src="js/lang.js"></script>
 <script src="../../translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script>
