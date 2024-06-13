@@ -59,7 +59,10 @@ class Automobile extends Model
     {
         return $this->hasMany(TaxeVM::class);
     }
-
+    public function amendes()
+    {
+        return $this->hasMany(Amende::class);
+    }
 
 
    

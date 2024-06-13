@@ -41,7 +41,7 @@
                 <ul class="nav">
                     <li> <a href=""><h4>Accueil</h4></a>  </li>
                     <li> <a href="{{ route('controleConform') }}"><h4>Contrôle</h4></a>  </li>
-                    <li> <a href=""><h4>Automobiles</h4></a>  </li>
+                    <li> <a href="{{Route('admin.automobiles.index')}}"><h4>Automobiles</h4></a>  </li>
                     <li> <a href=""><h4>Infractions</h4></a>  </li>
                     <li> <a href=""><h4>Amendes</h4></a>  </li>
                     <li> <a href=""><h4>Gestion des citoyens</h3></a>  </li>

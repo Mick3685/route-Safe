@@ -69,7 +69,7 @@
 									<li class=""><a href="{{Route('dashboard')}}">Accueil</a></li>
 									<li class=""><a href="{{Route('statut')  }}">Statut</a></li>
 									<li class=""><a href="{{Route('voiture.index')}}">Voiture</a></li>
-									<li class=""><a href="{{Route('payment') }}">Paiement</a></li>
+									<li class=""><a href="{{Route('routesafe.amendes.index')}}">Amende</a></li>
 									<li class=""><a href="">Historique</a></li>
 									<li class=""><a href="">Facture</a></li>
 									<li class=""><a href="{{Route('contact.index')}}">Contact</a></li>
@@ -265,7 +265,7 @@
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
-
+<script src="https://cdn.kkiapay.me/k.js">
 
 <script src="js/jquery.js"></script>
 <script src="js/popper.min.js"></script>
@@ -295,5 +295,4 @@
 </body>
 
 
-<!-- Mirrored from pixydrops.com/linoorhtml/one-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Mar 2024 23:13:14 GMT -->
 </html>

@@ -10,15 +10,17 @@ class Amende extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_inflation',
+        'automobile_id',
+        'description',
+        'date_inflation',
+        'lieu',
         'montant',
         'delaidepaiement',
-       
+        'status'
     ];
 
-    public function inflations()
+    public function automobile()
     {
-        return $this->belongsTo(Inflation::class);
+        return $this->belongsTo(Automobile::class);
     }
-
 }
