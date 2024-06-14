@@ -40,7 +40,7 @@ class AmendeController extends Controller
         $amende->delaidepaiement = $request->delaidepaiement;
         $amende->save();
 
-        return redirect()->route('admin.automobiles.index')->with('success', 'Amende ajoutée avec succès.');
+        return redirect()->route('admin.automobiles.index')->with('success', 'Amende envoyées avec succès.');
     }
 
     public function index()

@@ -6,6 +6,12 @@
     <div class="container">
         <h1>Liste des Automobiles</h1>
         
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+        
         <!-- Formulaire de recherche -->
         <form action="{{ route('admin.automobiles.search') }}" method="GET" class="mb-3">
             <div class="input-group">
